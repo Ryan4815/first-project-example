@@ -24,7 +24,11 @@ git add: This does not add new files to your repository. Instead, it brings new 
 
 git commit: Git’s most important command. After you make any sort of change, you input this in order to take a “snapshot” of the repository. Usually it goes git commit -m “Message here.” The -m indicates that the following section of the command should be read as a message.
 
-git branch: Working with multiple collaborators and want to make changes on your own? This command will let you build a new branch, or timeline of commits, of changes and file additions that are completely your own. Your title goes after the command. If you wanted a new branch called “cats,” you’d type git branch cats.
+git stash: Sometimes when you go to pull you may have changes you don't want to commit just yet. One option you have, other than commiting, is to stash the changes. Use the command 'git stash' to stash your changes, and 'git stash apply' to re-apply your changes after your pull.
+
+git reset: unstages the files before a commit.
+
+git branch: Working with multiple collaborators and want to make changes on your own? This command will let you build a new branch, or timeline of commits, of changes and file additions that are completely your own. Your title goes after the command. If you wanted a new branch called “cats,” you’d type git branch cats. "git branch -d branchname" to delete a branch.
 
 git checkout: Literally allows you to “check out” a repository that you are not currently inside. This is a navigational command that lets you move to the repository you want to check. You can use this command as git checkout master to look at the master branch, or git checkout cats to look at another branch.
 
@@ -36,4 +40,8 @@ git pull: If you’re working on your local computer and want the most up-to-dat
 
 git remote add origin: The first part is familiar; we’ve used git add already with files. We’ve tacked the word origin onto it to indicate a new place from which files will originate. remote is a descriptor of origin, to indicate the origin is not on the computer, but somewhere online.
 
+git log: Display the change log from prior commits.
 
+git diff: lists the differences between what is in the repository right now and the last commit. Another great use for diff is looking at changes within files that have already been staged "git diff --staged". Remember, staged files are files we have told git that are ready to be committed.
+
+git rm: deletes files from the local disk. If the project is then committed the files will be deleted on the remote repository.

@@ -23,7 +23,7 @@ cd ~/MyProject		Entering the project directory
 
 Initialize Git:
 
-git init		Makes the current directory a Git repository
+git init		Makes the current directory a Git repository - this is a hidden directory in which git operates
 
 ===========================
 
@@ -35,6 +35,8 @@ git status		gives a list of what is in the repository
 
 git add Readme.txt	this makes the file tracked and a part of the repository
 
+git add "*.txt"		adds all files with the .txt extension
+
 git commit -m "Add Readme.txt"	creates a commit (snapshot state) of the repository at this point - think of it as a saved backup of the project. The "-m" just adds a descriptory message to the commit written in present tense.
 
 ===========================
@@ -43,12 +45,68 @@ Connecting local and GitHub repositories:
 
 git remote add origin https://github.com/username/myproject.git		origin indicates a new place that files will orginate from, remote is a descriptor of origin to indicate the files are not on the pc but online
 
-git remove -v 	confirms and lists the connections
+git remote -v 		confirms and lists the connections
 
 ===========================
 
-Uploading or "Pushing" changes to the remote repo:
+Unstaging the current added files:
 
-git push origin master		to push the master branch of the local repository
+Once files and changes have been "add"ed, they are in waiting ready to be "committed". To reset what is currently in the add log, use the following:
 
+git reset HEAD <file>		unstages the current changes
+git reset directory/file	unstage a specific change
 
+==========================
+
+Undo-ing changes to a file:
+
+git checkout -- file		changes the file back to how it was at the last commit
+
+=========================
+
+Deleting files:
+
+git rm "file"		deletes a file from the local disk
+git rm "*.txt"		deletes all the files with the .txt extension
+
+========================
+
+Compare differences with the last commit:
+
+git diff HEAD		HEAD pointer is the current selection, which is preset to the master branch
+
+git diff --staged 	see the changes just staged
+
+==========================
+
+Accessing the Git change log:
+
+git log		Displays the change log
+
+==========================
+
+Uploading or "Pushing" changes from the local to the remote repo:
+
+git push -u origin master		to push the master branch of the local repository. "-u" tells Git to remember these parameters so next we can just enter "git push".
+
+==========================
+
+Downloading or "Pulling" changes from the remote repo to the local:
+
+git pull origin master		pull the changes made to the gitHub repository (i.e. when somebody else is working on the code too and made their own local changes)
+
+=========================
+
+Creating a new branch:
+
+git branch "branch-name"	creates a new branch to work on and make changes before implementing back with the master branch
+
+git checkout "branch-name" 	switches branch
+
+=========================
+
+Merging branches:
+
+git merge "branch-name"		merges the selected branch with the master branch
+
+git branch -d "branch-name"	deletes the branch after it has been merged with the master branch

@@ -7,3 +7,19 @@ Included in the master branch are:
 glossary.txt	Terms often used on GitHub and in the Git Bash Command Line
 
 git-setup.txt	The process taken to initialise Git and create a project repository
+
+=======================
+
+git init
+
+git status
+
+git add ""
+
+git status
+
+git commit -m "message"
+
+git status
+
+git push origin master
