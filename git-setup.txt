@@ -1,0 +1,54 @@
+============================
+
+Configuring for the first time:
+
+git config --global user.name "Your Name Here"
+git config --global user.email "your_email@youremail.com"
+
+===========================
+
+Creating an online repository:
+
+Use the GitHub website
+
+===========================
+
+Creating an offline (local) repository:
+
+mkdir ~/MyProject	The ~/ ensures that we’re building the repository at the top level of your computer’s file structure
+
+cd ~/MyProject		Entering the project directory
+
+===========================
+
+Initialize Git:
+
+git init		Makes the current directory a Git repository
+
+===========================
+
+Accessing and creating files:
+
+touch Readme.txt	"touch" creates a untracked file
+
+git status		gives a list of what is in the repository
+
+git add Readme.txt	this makes the file tracked and a part of the repository
+
+git commit -m "Add Readme.txt"	creates a commit (snapshot state) of the repository at this point - think of it as a saved backup of the project. The "-m" just adds a descriptory message to the commit written in present tense.
+
+===========================
+
+Connecting local and GitHub repositories:
+
+git remote add origin https://github.com/username/myproject.git		origin indicates a new place that files will orginate from, remote is a descriptor of origin to indicate the files are not on the pc but online
+
+git remove -v 	confirms and lists the connections
+
+===========================
+
+Uploading or "Pushing" changes to the remote repo:
+
+git push origin master		to push the master branch of the local repository
+
+
